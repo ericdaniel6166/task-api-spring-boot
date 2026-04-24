@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    username: taskuser
+    password: taskpass
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+  main:
+    lazy-initialization: true
+
+logging:
+  level:
+    com.eric6166: DEBUG
+    org.hibernate.SQL: DEBUG

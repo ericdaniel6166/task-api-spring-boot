@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: task-api
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: false
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: false
+        max-page-size: 100
+
+app:
+  security:
+    jwt:
+      secret: test-secret-key-at-least-256-bits-long-here-for-testing-purposes
+      expiration-ms: 86400000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

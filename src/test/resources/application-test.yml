@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: task-api
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: false
+  liquibase:
+    enabled: false
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: false
+        max-page-size: 100
+
+app:
+  security:
+    jwt:
+      secret: test-secret-key-at-least-256-bits-long-here-for-testing-purposes
+      expiration-ms: 86400000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
