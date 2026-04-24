@@ -1,6 +1,6 @@
 # task-api-spring-boot
 
-Production-ready REST API for personal task management with stateless JWT authentication.
+Simple REST API for personal task management with stateless JWT authentication.
 
 Built with **Spring Boot 3.5.11 + Java 21**, PostgreSQL 16, Spring Security 6, and Testcontainers. Virtual threads (Project Loom) enabled.
 
